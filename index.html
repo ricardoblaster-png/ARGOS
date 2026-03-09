@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Simulador CFE - GESCOM</title>
-    <style>
     <link rel="stylesheet" href="css/styles.css">
+</head>
+
 <body>
 
     <header>
@@ -24,7 +25,8 @@
             <label class="login-label">RPE:</label>
             <input type="text" id="inputRPE" class="login-input" placeholder="Ej: A12345">
 
-            <div style="background: #f1f8e9; padding: 15px; border-radius: 10px; margin-bottom: 15px; text-align:left; border: 1px solid #c8e6c9;">
+            <div
+                style="background: #f1f8e9; padding: 15px; border-radius: 10px; margin-bottom: 15px; text-align:left; border: 1px solid #c8e6c9;">
                 <label class="login-label" style="text-align:center;">🛠️ MÓDULO DE ENTRENAMIENTO</label>
                 <select id="moduleSelect" class="login-select">
                     <option value="classic">Lectura Clásica (Electromecánicos)</option>
@@ -35,7 +37,8 @@
                     <option value="random">🔥 Aleatorio Extremo (Todos)</option>
                 </select>
 
-                <label style="font-size: 12px; color: #555; display: flex; align-items: center; gap: 8px; margin-bottom:8px;">
+                <label
+                    style="font-size: 12px; color: #555; display: flex; align-items: center; gap: 8px; margin-bottom:8px;">
                     <input type="checkbox" id="fieldModeCheck"> Simular Cristal Sucio
                 </label>
                 <label style="font-size: 12px; color: #555; display: flex; align-items: center; gap: 8px;">
@@ -44,24 +47,34 @@
             </div>
 
             <button class="btn-blue" onclick="startTest(true)">▶ PRÁCTICA LIBRE (SIN LÍMITE)</button>
-            <button class="btn-green" style="margin-top: 10px;" onclick="startTest(false)">📝 EVALUACIÓN OFICIAL (10 PREGUNTAS)</button>
+            <button class="btn-green" style="margin-top: 10px;" onclick="startTest(false)">📝 EVALUACIÓN OFICIAL (10
+                PREGUNTAS)</button>
         </div>
     </div>
 
     <div id="checklistScreen" class="screen hidden">
         <div class="login-card" style="text-align: left;">
             <h3 style="color:#2e7d32; margin-top: 0; text-align: center;">📋 CHECK-LIST PRE-RUTA</h3>
-            <p style="font-size:13px; color:#555; margin-bottom: 15px; text-align: justify;">Verifica tu preparación operativa antes de iniciar la ruta de trabajo:</p>
-            
-            <div class="chk-item"><input type="checkbox" id="chk1"><label for="chk1">Realizar la Reunión de Inicio de Maniobra (RIM) / RIJ del día.</label></div>
-            <div class="chk-item"><input type="checkbox" id="chk2"><label for="chk2">Llenado del formato RIM (Evaluación de riesgos 6 A's).</label></div>
-            <div class="chk-item"><input type="checkbox" id="chk3"><label for="chk3">Firmar el formato de actividades.</label></div>
-            <div class="chk-item"><input type="checkbox" id="chk4"><label for="chk4">Verificar hora y fecha de Terminal Portátil (TP).</label></div>
-            <div class="chk-item"><input type="checkbox" id="chk5"><label for="chk5">Verificar el correcto funcionamiento del puerto óptico.</label></div>
-            <div class="chk-item"><input type="checkbox" id="chk6"><label for="chk6">Revisar condiciones y limpieza del vehículo oficial.</label></div>
-            <div class="chk-item"><input type="checkbox" id="chk7"><label for="chk7">Portar mi EPP Completo (Casco clase E, gafas, botas, ropa fajada sin metales).</label></div>
-            
-            <button id="btnStartRoute" class="btn-green" style="margin-top:20px; opacity:0.5;" disabled onclick="startRoute()">🚗 INICIAR RUTA EN CAMPO</button>
+            <p style="font-size:13px; color:#555; margin-bottom: 15px; text-align: justify;">Verifica tu preparación
+                operativa antes de iniciar la ruta de trabajo:</p>
+
+            <div class="chk-item"><input type="checkbox" id="chk1"><label for="chk1">Realizar la Reunión de Inicio de
+                    Maniobra (RIM) / RIJ del día.</label></div>
+            <div class="chk-item"><input type="checkbox" id="chk2"><label for="chk2">Llenado del formato RIM (Evaluación
+                    de riesgos 6 A's).</label></div>
+            <div class="chk-item"><input type="checkbox" id="chk3"><label for="chk3">Firmar el formato de
+                    actividades.</label></div>
+            <div class="chk-item"><input type="checkbox" id="chk4"><label for="chk4">Verificar hora y fecha de Terminal
+                    Portátil (TP).</label></div>
+            <div class="chk-item"><input type="checkbox" id="chk5"><label for="chk5">Verificar el correcto
+                    funcionamiento del puerto óptico.</label></div>
+            <div class="chk-item"><input type="checkbox" id="chk6"><label for="chk6">Revisar condiciones y limpieza del
+                    vehículo oficial.</label></div>
+            <div class="chk-item"><input type="checkbox" id="chk7"><label for="chk7">Portar mi EPP Completo (Casco clase
+                    E, gafas, botas, ropa fajada sin metales).</label></div>
+
+            <button id="btnStartRoute" class="btn-green" style="margin-top:20px; opacity:0.5;" disabled
+                onclick="startRoute()">🚗 INICIAR RUTA EN CAMPO</button>
         </div>
     </div>
 
@@ -99,9 +112,10 @@
         <div id="mod-theory" class="module-container hidden">
             <div class="imp-box" style="background:#e3f2fd; border:2px solid #0288d1;">
                 <div style="font-size:24px; margin-bottom:5px;">📖</div>
-                <div id="theoryQuestionText" class="imp-text" style="color:#01579b; font-size:15px;">¿Pregunta Teórica?</div>
+                <div id="theoryQuestionText" class="imp-text" style="color:#01579b; font-size:15px;">¿Pregunta Teórica?
+                </div>
                 <div id="theoryOptionsContainer" style="display:flex; flex-direction:column; width:100%;">
-                    </div>
+                </div>
             </div>
         </div>
 
@@ -115,7 +129,9 @@
             <div id="feedIcon" class="icon-feed"></div>
             <div id="feedText" class="text-feed"></div>
             <div id="feedSub" style="font-size:14px; color:#555; margin-bottom: 10px;"></div>
-            <div id="feedExplanation" style="font-size:13px; color:#444; background:#f0f0f0; padding:12px; border-radius:8px; border-left:4px solid #c62828; text-align:left; width:100%; display:none;"></div>
+            <div id="feedExplanation"
+                style="font-size:13px; color:#444; background:#f0f0f0; padding:12px; border-radius:8px; border-left:4px solid #c62828; text-align:left; width:100%; display:none;">
+            </div>
             <button class="btn-blue" style="margin-top:15px;" onclick="nextQuestion()">Siguiente Acción</button>
         </div>
     </div>
@@ -124,7 +140,8 @@
         <div class="transit-card">
             <div style="font-size: 40px; margin-bottom: 5px;">🚐</div>
             <div class="text-feed transit-feed">EVENTO EN RUTA</div>
-            <div id="transitSituation" style="font-size:14px; color:#333; margin: 15px 0; font-weight:bold; text-align:justify;"></div>
+            <div id="transitSituation"
+                style="font-size:14px; color:#333; margin: 15px 0; font-weight:bold; text-align:justify;"></div>
             <div id="transitOptions" style="display:flex; flex-direction:column; width:100%; gap:5px;"></div>
         </div>
     </div>
@@ -150,4 +167,5 @@
     <script src="js/simulador.js"></script>
     <script src="js/api.js"></script>
 </body>
+
 </html>
